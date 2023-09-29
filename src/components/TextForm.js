@@ -36,10 +36,10 @@ export default function TextForm(props) {
 
   return (
 <>
-   <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
+   <div className="container my-3" style={{color:props.mode==='dark'?'white':'#2e5c85'}}>
         <h1>{props.heading}</h1>
-        <div className="mb-3"  style={{color:props.mode==='dark'?'white':'black'}}> 
-            <textarea className="form-control" style={{backgroundColor:props.mode==='dark'?'grey':'white',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+        <div className="mb-3"  style={{color:props.mode==='dark'?'white':'#2e5c85'}}> 
+            <textarea className="form-control" style={{backgroundColor:props.mode==='dark'?'darkgrey':'white',color:props.mode==='dark'?'white':'##2e5c85'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
         </div>
         <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
         <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
@@ -47,7 +47,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear</button>
 
    </div>
-   <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}} >
+   <div className="container my-3" style={{color:props.mode==='dark'?'white':'#2e5c85'}} >
         <h2>Your Text Summary</h2>
         {/* <p>{text.split(" ").length} Words and {text.length} Characters</p> */}
         <p>{text.split(' ').filter(word => word !== '').length} Words and {text.length} Characters</p>
