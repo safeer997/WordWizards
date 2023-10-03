@@ -1,7 +1,6 @@
 import React , {useState} from 'react'
 
 
-
 export default function TextForm(props) {
 
     const [text,setText]=useState('');
@@ -10,11 +9,15 @@ export default function TextForm(props) {
       //  console.log("upper case was clicked "+text);
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to Uppercase","success")
+        
+        
     }
     const handleLoClick = ()=>{
        
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to Lowercase","success")
     }
     
     const handleOnChange = (event)=>{
@@ -28,10 +31,12 @@ export default function TextForm(props) {
         // Remove extra spaces using a regular expression
         const cleanedText = text.replace(/\s+/g, ' ');
         setText(cleanedText);
+        props.showAlert("Extra spaces removed","success")
     }
     
     const handleClearClick = ()=>{
         setText("");
+        props.showAlert("Text area cleared","success")
     }
 
   return (
