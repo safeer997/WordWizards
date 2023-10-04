@@ -2,6 +2,7 @@ import React , {useState} from 'react'
 
 
 export default function TextForm(props) {
+   
 
     const [text,setText]=useState('');
 
@@ -44,12 +45,12 @@ export default function TextForm(props) {
    <div className="container my-3" style={{color:props.mode==='dark'?'white':'#2e5c85'}}>
         <h1>{props.heading}</h1>
         <div className="mb-3"  style={{color:props.mode==='dark'?'white':'#2e5c85'}}> 
-            <textarea className="form-control" style={{backgroundColor:props.mode==='dark'?'darkgrey':'white',color:props.mode==='dark'?'white':'##2e5c85'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+            <textarea className="form-control" style={{backgroundColor:props.mode==='dark'?'darkgrey':'white',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleRemoveSpacesClick}>Remove space</button>
-        <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleRemoveSpacesClick}>Remove space</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear</button>
 
    </div>
    <div className="container my-3" style={{color:props.mode==='dark'?'white':'#2e5c85'}} >
@@ -59,7 +60,7 @@ export default function TextForm(props) {
         {/* <p>{0.008*text.split(' ').filter(word => word !== '').length.toFixed(1)} Minutes Read</p> */}
         <p>{((0.008 * text.split(' ').filter(word => word !== '').length)).toFixed(1)} minutes read</p>
         <h3>Preview</h3>
-        <p>{text.length>0?text:"Enter something to preview"}</p>
+        <p>{text.length>0?text:"Nothing to preview"}</p>
 
    </div>
 </>

@@ -14,7 +14,7 @@ import {
 function App() {
   const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
-  const [themeName, setThemeName] = useState("Dark mode");
+  const [themeName, setThemeName] = useState("dark mode");
 
   const showAlert = (message, type) => {
     setAlert({
@@ -45,8 +45,9 @@ function App() {
       <Router>
         <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} themeName={themeName} />
         <Alert alert={alert} />
+        {/* <TextForm heading="Enter Your Text Here !" mode={mode} showAlert={showAlert}/> */}
         <Routes>
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About mode={mode} />} />
           <Route exact path="/" element={<TextForm heading="Enter Your Text Here !" mode={mode} showAlert={showAlert} />} />
         </Routes>
       </Router>
