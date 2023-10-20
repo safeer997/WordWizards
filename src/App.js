@@ -40,7 +40,7 @@ function App() {
     <>
       <Router>
         <Navbar
-          title="TextUtils"
+          title="WordWizards"
           aboutText="About"
           mode={mode}
           toggleMode={toggleMode}
